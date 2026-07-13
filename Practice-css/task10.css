@@ -1,0 +1,9 @@
+ .navbar1{
+            background-color: #f1f1f1; 
+            display: flex; 
+            justify-content:space-between; 
+            align-items:center;
+        }
+        #navigation1 a{
+            margin-right: 10px;
+        }

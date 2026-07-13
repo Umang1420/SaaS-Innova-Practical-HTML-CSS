@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive webpage</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      nav {
+        background-color: #f1f1f1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .responsive-webpage {
+        width: 100%;
+        max-width: 500px;
+        height: 100%;
+        max-height: 500px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .a {
+        background-color: red;
+        width: 100px;
+        height: 100px;
+        border: solid black 2px;
+        padding: 10px;
+        margin: 20px;
+      }
+
+      .b {
+        background-color: blue;
+        width: 100px;
+        height: 100px;
+        border: solid black 2px;
+        padding: 10px;
+        margin: 20px;
+      }
+
+      .c {
+        background-color: green;
+        width: 100px;
+        height: 100px;
+        border: solid black 2px;
+        padding: 10px;
+        margin: 20px;
+      }
+      #navigation a {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div id="logo">
+        <h3 style="max-width: 500px;">NewsCrunch</h3>
+      </div>
+      <div id="navigation">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+    <br /><br />
+    <section class="responsive-webpage">
+      <div class="a"></div>
+      <div class="b"></div>
+      <div class="c"></div>
+      <div class="a"></div>
+      <div class="b"></div>
+      <div class="c"></div>
+    </section>
+  </body>
+</html>

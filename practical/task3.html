@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Layout</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-size: 1.3rem;
+        text-align: center;
+      }
+      .grid-container{
+        display:grid;
+        grid-template-areas: 
+        'header'
+        'main'
+        'content'
+        'fact'
+        'footer';
+        gap:10px;
+      }
+      .header{
+        grid-area: header;
+        background-color: purple;
+        color: white;
+      }
+      .main ul{
+        list-style-type: none;
+      }
+      .main li{
+        padding: 5px;
+        
+      }
+      .main{
+        grid-area: main;
+        background-color: blueviolet;
+        color: aliceblue;
+      }
+      .content{
+        grid-area: content;
+        background-color: rgb(84, 231, 231);
+        color: blue; 
+      }
+      .fact{
+        grid-area: fact;
+        background-color: rgb(41, 30, 30);
+        color: rgb(197, 182, 164);
+      }
+      .footer{
+        grid-area: footer;
+        background-color: brown;
+        color: bisque;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="header"><h1>India</h1></div>
+      <div class="main">
+        <ul>
+          <li>Delhi</li>
+          <li>Mumbai</li>
+          <li>Kolkata</li>
+          <li>Chennai</li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2>This is a grid container.</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab nesciunt
+          reprehenderit expedita similique quibusdam dolores sunt dolorem
+          repellat, explicabo, distinctio fugit accusamus placeat iure minima
+          voluptates, ratione aliquam. Ullam, cumque.
+        </p>
+
+      </div>
+      <div class="fact">
+        <h3>Did You Know?</h3>
+        <p>India is the world's largest democracy.</p>
+      </div>
+        <div class="footer">
+            <p>© 2024 India. All rights reserved.</p>
+        </div>
+    </div>
+  </body>
+</html>

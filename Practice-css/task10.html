@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css</title>
+    <link rel="stylesheet" href="task10.css">
+    <style>
+        .navbar{
+            background-color: #f1f1f1; 
+            display: flex; 
+            justify-content:space-between; 
+            align-items:center;
+        }
+        #navigation a{
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section class="inline-styles">
+        <h1>Inline Styles</h1>
+        <nav style="background-color: #f1f1f1; display: flex; justify-content:space-between; align-items:center;">
+            <div id="logo">
+                <h3 style="max-width: 100px;">NewsCrunch</h3>
+            </div>
+            <div id="navigation">
+                <a href="#hero" style="margin-right: 10px;">Home</a>
+                <a href="#about" style="margin-right: 10px;">About</a>
+                <a href="#contact" style="margin-right: 10px;">Contact</a>
+            </div>
+        </nav>
+    </section>
+    
+    <section class="internal-styles">
+        <h1>Internal Styles</h1>
+        <nav class="navbar">
+            <div id="logo">
+                <h3 style="max-width: 100px;">NewsCrunch</h3>
+            </div>
+            <div id="navigation">
+                <a href="#hero" >Home</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </section>
+
+     <section class="External-styles">
+        <h1>External Styles</h1>
+        <nav class="navbar1">
+            <div id="logo">
+                <h3 style="max-width: 100px;">NewsCrunch</h3>
+            </div>
+            <div id="navigation1">
+                <a href="#hero" >Home</a>
+                <a href="#about" >About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </section>
+</body>
+</html>

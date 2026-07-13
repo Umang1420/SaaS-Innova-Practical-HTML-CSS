@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover & Transition </title>
+    <style>
+        .hover-box{
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+           transition: background-color 0.5s ease 0.3s, width 0.5s ease, height 0.5s ease; 
+            padding: 20px; 
+        }
+        .hover-box:hover{
+            background-color: lightcoral;
+            width: 250px;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <section class="hover-transition">
+        <h1>Hover & Transition</h1>
+        <div class="hover-box">
+            Hover over this box to change its background color.
+        </div>
+    </section>
+</body>
+</html>

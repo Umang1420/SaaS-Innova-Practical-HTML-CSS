@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragistration Form</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right,#948e99,#2e1437);
+        }
+        .ragister{
+            width: 100%;
+            max-width: 600px;
+            height: 600px;
+            background: linear-gradient(to bottom,#ffa17f,#00223e);
+            border: transparent 2px;
+            border-radius: 10px;
+            margin-top: 150px;
+            padding: 10px;
+        }
+        
+        .info input{
+            width: 95%;
+            border: transparent;
+            border-radius: 7px;
+            margin: 7px;
+            height: 30px;
+        }
+        .info>label,.info2>label{
+            color:rgb(218, 214, 214);
+        }
+        button{
+            width:100%;
+            height: 40px;
+            border-radius: 10px;
+            background-color: #2e1437;
+            color:rgb(218, 214, 214);
+        }
+    </style>
+</head>
+<body>
+    <section class="ragister"> 
+       <form>
+         <h1 style="text-align: center;">Ragistartion Form</h1>
+        <div class="info">
+            <label name="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label name="email">Email:</label>
+            <input type="email" id="Email" name="Email" required><br><br>
+            <label name="pass">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <label name="conpass">Conifirm Password:</label>
+            <input type="password" id="conpass" name="conpass" required><br><br>
+        </div>
+        <div class="info2" >
+            <label name="gender">Gender:</label>
+            <input type="radio" value="Male" name="gender" required>
+            <label name="Male">Male</label>
+            <input type="radio" value="female" name="gender" required>
+            <label name="female">Female</label>
+            <input type="radio" value="other" name="gender" required>
+            <label name="other">other</label><br><br>
+            <label name="Hobbies">Hobbies:</label>
+            <input type="checkbox" name="hobbies" value="reading">
+            <label name="reading">Reading</label>
+            <input type="checkbox" name="hobbies" value="reading">
+            <label name="cricket">Cricket</label>
+            <input type="checkbox" name="hobbies" value="reading">
+            <label name="Gym">Gym</label>
+            <input type="checkbox" name="hobbies" value="reading">
+            <label name="Travaling">Travaling</label><br><br>
+            <label>Country:</label>
+            <select>
+                <option value="">Select a Country</option>
+                <option value="india">India</option>
+                <option value="usa">USA</option>
+                <option value="uk">UK</option>
+                <option value="value">Chaina</option>
+            </select><br><br>
+            <button value="submit">Ragister</button>
+        </div>
+       </form>
+        
+    </section>
+</body>
+</html>
