@@ -4,11 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js"></script>
+    
+    <style>
+        .content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form{
+            width: 100%;
+            max-width: 600px;
+            height: 500px;
+            border-radius: 20px;
+            background-color: antiquewhite;
+            margin: 10px;
+        }
+        #add{
+            height: 300px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            
+        }
+        #addbtn{
+            width: 95%;
+            border: 2px transparent;
+            border-radius: 5px;
+        }
+        
+        input{
+            width: 95%;
+            border-radius: px;
+            height: 30px;
+            margin: 10px;
+            text-align: center;
+            border: 2px transparent;
+            border-radius: 5px;
+        }
+        #form1{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        table,th,td{
+            border: 2px solid black; 
+            text-align: center;
+        }
+        .dis {
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="container"></div>
+        <div class="container">
+            <div class="content">    
+                <div id="page1" >
+                    <form id="form1" onclick="event.preventDefault();">
+                       <div class="records">
+                            <table>
+                                <tr>
+                                    <th>Recpie Name</th>
+                                    <th>Recpie Ingrediants</th>
+                                    <th>Recpie Time</th>
+                                </tr>
+                                <tr>
+                                    <td id="show"></td>
+                                    <td id="show1"></td>
+                                    <td id="show11"></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="dis">
+                            <button onclick="show(),event.preventDefault();">Show data</button>
+                       </div>
+
+                    </form>
+                    <div class="nav-links">
+                        <a href="#" onclick="return showe('page2','page1');">Add Recepies</a>
+                    </div>
+                </div>
+                <div id="page2" style="display: none;">
+                    <form onclick="event.preventDefault();">
+                        <h2 style="text-align: center; display: block;"> Recipe Management System</h2>
+                        <div id="add">
+                            <input type="text" id="addre" name="recipe" required placeholder="Enter new Recipe Name">
+                            <input type="text" id="addin" name="recipe" required placeholder="Enter new Recipe Ingredeants">
+                            <input type="text" id="addti" name="recipe" required placeholder="Enter new Recipe time">
+                            <button id="addbtn" type="addbtn" onclick="addf()">Add</button>
+                        </div>
+                        <div id="show">
+                        
+                        </div>
+                    </form>
+                    <div class="nav-links">
+                        <a href="#" onclick="return showe('page1','page2');">Show page 1</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
+    <script src="script.js" defer></script>
 </body>
 </html>
