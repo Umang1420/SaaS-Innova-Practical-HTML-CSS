@@ -24,12 +24,15 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            align-items: center;
             
         }
         #addbtn{
             width: 95%;
+            height: 30px;
             border: 2px transparent;
             border-radius: 5px;
+            margin: 10px;
         }
         
         input{
@@ -49,12 +52,14 @@
             align-items: center;
         }
         table,th,td{
+            width: 500px;
             border: 2px solid black; 
             text-align: center;
         }
         .dis {
             width: 100%;
         }
+
     </style>
 </head>
 <body>
@@ -63,45 +68,45 @@
             <div class="content">    
                 <div id="page1" >
                     <form id="form1" onclick="event.preventDefault();">
+                        <h2 style="text-align: center; display: block;"> Recipe List</h2>
                        <div class="records">
                             <table>
                                 <tr>
                                     <th>Recpie Name</th>
                                     <th>Recpie Ingrediants</th>
                                     <th>Recpie Time</th>
+                                    <th>category</th>
+                                    <th>Modification</th>
                                 </tr>
-                                <tr>
-                                    <td id="show"></td>
-                                    <td id="show1"></td>
-                                    <td id="show11"></td>
-                                </tr>
+                                
+                                  <tbody id="recipeRows"></tbody>
+                                
                             </table>
                         </div>
                         <div class="dis">
-                            <button onclick="show(),event.preventDefault();">Show data</button>
-                       </div>
-
+                            <input type="text" id="searchBox" placeholder="Search by ingredient" required>
+                            <button id="addbtn" onclick="searchRecipes(), event.preventDefault();">Search</button>
+                            <button id="addbtn" onclick="show(), event.preventDefault();">Show All</button> 
+                            <button id="addbtn" onclick="return showe('page2','page1');">Add Recepies</button>
+                        </div>
                     </form>
-                    <div class="nav-links">
-                        <a href="#" onclick="return showe('page2','page1');">Add Recepies</a>
-                    </div>
                 </div>
                 <div id="page2" style="display: none;">
                     <form onclick="event.preventDefault();">
-                        <h2 style="text-align: center; display: block;"> Recipe Management System</h2>
-                        <div id="add">
-                            <input type="text" id="addre" name="recipe" required placeholder="Enter new Recipe Name">
-                            <input type="text" id="addin" name="recipe" required placeholder="Enter new Recipe Ingredeants">
-                            <input type="text" id="addti" name="recipe" required placeholder="Enter new Recipe time">
-                            <button id="addbtn" type="addbtn" onclick="addf()">Add</button>
-                        </div>
-                        <div id="show">
                         
+                        <div id="add">
+                            <h2 style="text-align: center;"> Recipe Management System</h2>
+                            <input type="text" id="addre" name="recipe" required placeholder="Enter Recipe Name">
+                            <input type="text" id="addin" name="recipe" required placeholder="Enter Recipe Ingredeants">
+                            <input type="text" id="addti" name="recipe" required placeholder="Enter Recipe time">
+                            <input type="text" id="addca" name="recipe" required placeholder="Enter Cataogary">
+                            
+                        </div>
+                        <div class="nav-links">
+                            <button id="addbtn" type="addbtn" onclick="addf()">Add</button>
+                            <button id="addbtn" onclick="return showe('page1','page2');">See All Recpies</button>
                         </div>
                     </form>
-                    <div class="nav-links">
-                        <a href="#" onclick="return showe('page1','page2');">Show page 1</a>
-                    </div>
                 </div>
             </div>
         </div>
