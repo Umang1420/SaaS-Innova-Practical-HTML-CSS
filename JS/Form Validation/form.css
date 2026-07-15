@@ -1,0 +1,36 @@
+.container{
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.for{
+    width: 100%;
+    max-width: 600px;
+    height: 600px;
+    background-color: antiquewhite;
+}
+.info{
+    margin: 10px;
+}
+input{
+    width: 100%;
+    max-width:570px;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+}
