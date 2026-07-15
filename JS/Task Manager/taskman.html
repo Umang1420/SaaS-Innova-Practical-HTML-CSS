@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="task.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="tasks">
+                <form onsubmit="event.preventDefault();">
+                    <h1 style="text-align: center;">Task Manager</h1>
+                    <div class="input">
+                        <label>Enter Task Title:</label><br><br>
+
+                        <input id="ts" type="text" required><br><br>
+                        <label>Enter Task Description:</label><br><br>
+                        <input id="td" style="height: 80px;" type="text" required>
+                        <div class="buttons">
+                            <button id="btn" type="button" onclick="add();">Add</button>
+                            <button id="btn" type="button" onclick="display();event.preventDefault();">Display All</button>
+                            <button id="btn" type="button" onclick="filter()">Completed</button>
+                            <button id="btn" type="button" onclick="filter()">Incomplete</button>
+                        </div>
+                    </div>
+                    <div class="task-disp">
+                        <h3>Task Title</h3>
+                        <h3>Task Description</h3>
+                        <h3>Task Stetus</h3>
+                        <h3>Modification</h3>
+                    </div>  
+                    <div id="display">
+                    
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="task.js" defer></script>
+</html>     
