@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Analysis Tool</title>
+     <link rel="stylesheet" href="text.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="input">
+          <h1 style="text-align: center">Text Analysis Tool</h1>
+          <h2>Enter Your Text</h2>
+          <br />
+          <form>
+            <input type="text" class="in" id="input" required />
+            <div class="buttons">
+              <button
+                class="an"
+                id="an"
+                onclick="
+                  getstring();
+                  event.preventDefault();
+                  wcount();
+                "
+              >
+                Get Anaylsis
+              </button>
+              <button
+                class="an"
+                id="cl"
+                onclick="
+                  feclear();
+                  event.preventDefault();
+                "
+              >Clear
+              </button>
+            </div>
+          </form>
+          <div class="result">
+            <div class="cards">
+              <div class="card">
+                <div class="card-info">
+                  <h6>Count:</h6>
+                  <p id="count"></p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-info">
+                  <h6>Words:</h6>
+                  <p id="word"></p>
+                </div>
+              </div>
+            </div>
+            <div class="freq">
+              <div class="co">
+                <h4>Frequancy of words:</h4>
+                <div id="lists"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="text.js" defer></script>
+</html>

@@ -1,0 +1,90 @@
+   * {
+        padding: 0;
+        margin: 0;
+        margin: 20px;
+      }
+      .container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .content {
+        width: 100%;
+        max-width: 900px;
+        background-color: rgb(224, 229, 231);
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        border-radius: 100px;
+      }
+      .input {
+        width: 100%;
+        max-width: 800px;
+        height: fit-content;
+        margin: 20px;
+      }
+      .in {
+        width: 100%;
+        max-width: 740px;
+        height: 100px;
+        border: none;
+        background-color: lightcyan;
+        border-radius: 10px;
+      }
+      .buttons {
+        display: flex;
+      }
+      .an {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        width: 100%;
+        background-color: lightcyan;
+      }
+      .cards {
+        width: 100%;
+        max-width: 700px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+      .card {
+        width: 100%;
+        max-width: 180px;
+        height: 100px;
+        background-color: lightcyan;
+        border: none;
+        border-radius: 10px;
+      }
+      .freq {
+        min-height: 100px;
+        height: fit-content;
+        background-color: lightcyan;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+      }
+      .co {
+        width: 100%;
+      }
+      #lists .word-row {
+        min-height: 50px;
+        height: fit-content;
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 600px;
+        background-color: antiquewhite;
+        padding: 5px;
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-between;
+      }
