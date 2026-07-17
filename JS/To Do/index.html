@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO DO</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/60b76f61c8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body onclick="event.preventDefault();">
+    <div class="container">
+      <div class="content">
+        <div class="form">
+          <form >
+            <div class="div">
+              <h1>TODO App</h1>
+              <div class="add">
+                <div class="show">
+                  <p>Add New Task</p>
+                  <button id="pbtn" value="OFF">
+                    <i class="fa-solid fa-plus" style="background-color: rgb(247, 214, 171); padding: 2px"></i>
+                  </button>
+                </div>
+                <div id="input" style="display: none;">
+                    <label>Task:</label><br>
+                    <input type="text" class="in" id="tn" /><br><br>
+                    <label>Task Discription:</label><br>
+                    <input type="text" class="in" id="td"/>
+                    <button id="addbtn"  class="abtn">ADD Task</button>
+                </div>
+              </div>
+              <div class="tasks">
+                <h1 style="text-align: center">TASKS</h1>
+                <div id="lists">
+                    <div class="data">
+                        <h3 id="ht"></h3>
+                        
+                    </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js" defer></script>
+</html>
