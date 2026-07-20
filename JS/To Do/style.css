@@ -21,7 +21,8 @@
 .form{
     width: 100%;
     max-width: 500px;
-    height: 600px;
+    height: fit-content;
+    min-height: 500px;
     background-color:cadetblue;
     border-radius: 10px;
     padding: 40px;
@@ -30,7 +31,8 @@
 form{
     border: 2px solid antiquewhite;
     border-radius: 10px;
-    height: 600px;
+    height: fit-content;
+    min-height: 500px;
 }
 
 .div{
@@ -70,7 +72,42 @@ form{
     border-radius: 10px;
     margin: 10px;
 
-}   
+}  
+
+#lists{
+      width: 100%;
+      max-width: 435px;
+      height: fit-content;
+      list-style-type: none;
+      padding: 20px;
+      border-radius: 10px;
+}
+
+#show{
+    border: 2px solid antiquewhite;
+    border-radius: 10px;
+    margin-top: 15px;
+    padding: 5px;
+    background-color: azure;
+}
+.buttons{
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+}
+
+.buttons button{
+      padding: 10px;
+      background-color: none;
+      border: none;
+}
+
+li{
+      justify-content: space-between;
+}
+#date{
+      opacity: 30%;
+}
 
 .show{
     display: flex;
@@ -78,4 +115,3 @@ form{
     align-items: center;
     margin-bottom: 15px;
 }
-
