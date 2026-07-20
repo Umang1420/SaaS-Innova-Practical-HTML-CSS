@@ -14,26 +14,42 @@ clr.addEventListener("click",cl);
 function adde(){
     let first = Number(fnum.value.trim());
     let secound = Number(snum.value.trim());
-    let result = first + secound ;
-    document.getElementById("result").innerHTML = result;
+    if(first && secound !== String()){
+        let result = first + secound ;
+        document.getElementById("result").innerHTML = result;
+    }else{
+        document.getElementById("result").innerHTML = "Enter Numbers Only";
+    }
 }
 function sube(){
     let first = Number(fnum.value.trim());
     let secound = Number(snum.value.trim());
-    let result = first - secound ;
-    document.getElementById("result").innerHTML = result;
+   if(first && secound !== String()){
+        let result = first - secound ;
+        document.getElementById("result").innerHTML = result;
+    }else{
+        document.getElementById("result").innerHTML = "Enter Numbers Only";
+    }
 }
 function mule(){
     let first = Number(fnum.value.trim());
     let secound = Number(snum.value.trim());
-    let result = first * secound ;
-    document.getElementById("result").innerHTML = result;
+    if(first && secound !== String()){
+        let result = first * secound ;
+        document.getElementById("result").innerHTML = result;
+    }else{
+        document.getElementById("result").innerHTML = "Enter Numbers Only";
+    }
 }
 function dive(){
     let first = Number(fnum.value.trim());
     let secound = Number(snum.value.trim());
-    let result = first / secound ;
-    document.getElementById("result").innerHTML = result;
+   if(first && secound !== String()){
+        let result = first / secound ;
+        document.getElementById("result").innerHTML = result;
+    }else{
+        document.getElementById("result").innerHTML = "Enter Numbers Only";
+    }
 }
 
 function cl(){
