@@ -14,7 +14,7 @@ clr.addEventListener("click",cl);
 function adde(){
     let first = Number(fnum.value.trim());
     let secound = Number(snum.value.trim());
-    if(first && secound !== String()){
+    if(first && secound !== String()|NaN){
         let result = first + secound ;
         document.getElementById("result").innerHTML = result;
     }else{
@@ -24,7 +24,7 @@ function adde(){
 function sube(){
     let first = Number(fnum.value.trim());
     let secound = Number(snum.value.trim());
-   if(first && secound !== String()){
+   if(first && secound !== String()|NaN){
         let result = first - secound ;
         document.getElementById("result").innerHTML = result;
     }else{
@@ -34,7 +34,7 @@ function sube(){
 function mule(){
     let first = Number(fnum.value.trim());
     let secound = Number(snum.value.trim());
-    if(first && secound !== String()){
+    if(first&&secound !== String()|NaN){
         let result = first * secound ;
         document.getElementById("result").innerHTML = result;
     }else{
@@ -44,7 +44,7 @@ function mule(){
 function dive(){
     let first = Number(fnum.value.trim());
     let secound = Number(snum.value.trim());
-   if(first && secound !== String()){
+   if(first && secound !== String()|NaN){
         let result = first / secound ;
         document.getElementById("result").innerHTML = result;
     }else{
