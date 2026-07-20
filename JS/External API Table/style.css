@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.data{
+    width: 100%;
+    max-width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.content{
+    width: 100%;
+    max-width: 800px;
+    height: fit-content;
+    background-color: gray;
+    margin-top: 300px;
+    padding: 20px;
+}
+
+.se{
+    display: flex;
+    gap: 5px;  
+}
+
+.table{
+    background-color: white;
+    height: fit-content;
+    padding: 20px;
+}
+table{
+    width: 100%;
+    max-width: 750px;
+    margin-top: 50px;
+    border: 2px solid green;
+}
+table th{
+    background-color: green;
+    color: white;
+    padding: 5px;
+}
+
+table td{
+    border: 1px solid green;
+    padding: 5px;
+}
