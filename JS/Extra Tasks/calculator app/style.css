@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.content{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    background-color: aquamarine;
+    width: 100%;
+    max-width: 600px;
+    height: 600px;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.opration{
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    background-color:beige;
+    padding: 20px;
+    gap: 20px;
+}
+.input{
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    gap: 20px;
+}
+.input input{
+    width: 100%;
+    max-width: 50%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+.buttons button{
+    width: 100%;
+    max-width: 48%;
+    margin: 5px;
+    height: 40px;
+}
+
+.buttons{
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.clrbtn{
+    width: 100%;
+    max-width: 500px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clr{
+    width: 100%;
+    max-width: 480px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+}
+
+#resultbox{
+    width: 100%;
+    max-width: 490px;
+    height: 110px;
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#result{
+    font-size: 2rem;
+}
