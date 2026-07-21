@@ -19,9 +19,52 @@
     background-color: aquamarine;
     width: 100%;
     max-width: 800px;
-    height: 600px;
+    height: 500px;
     margin-top: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.quote{
+    width: 100%;
+    max-width: 700px;
+    height: 400px;
+    background-color: white;
+    padding: 10px;
+}
+
+#q-box{
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#q-box p{
+    width: 100%;
+    max-width: 650px;
+    height: 200px;
+    padding: 10px;
+    font-size: 1.5rem;
+    color: rgb(129, 13, 13);
+    background-color: bisque;
+    margin: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ch{
+    width: 100%;
+    max-width: 650px;
+    height: 50px;
+    border: none;
+    color: rgb(129, 13, 13);
+    background-color: bisque;
+    border-radius: 10px;
+    font-size: 1.3rem;
 }
