@@ -19,16 +19,16 @@
     background-color: aquamarine;
     width: 100%;
     max-width: 800px;
-    height: 600px;
+    height: 720px;
     margin-top: 150px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
 .question-box{
-    width: 100%;
-    max-width: 700px;
+    width: 700px;
     height: 500px;
     background-color: white;
     padding: 20px;
