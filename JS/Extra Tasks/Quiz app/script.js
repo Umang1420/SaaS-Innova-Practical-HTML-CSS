@@ -1,3 +1,6 @@
+//upgarde left: change the question data hardcodeded to fetch.
+//https://opentdb.com/api.php?amount=30&category=23 fetch from this url
+
 let questions = [{
     "id": "01",
     "question":"Q1- Capital of Australia?",
