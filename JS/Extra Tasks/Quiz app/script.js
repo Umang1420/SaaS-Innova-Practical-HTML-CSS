@@ -41,32 +41,50 @@ let questions = [{
 }
 ];
 let correctcount = 0;
-
-function correct(){
-    correctcount = correctcount+1; 
-    console.log(correctcount);
-    document.getElementById("cou").innerHTML = correctcount;
-}
-
-
+let wrongcount = 0;
 
 let a = 0;
 function index(){
-    a++
-    console.log(a);
+    let selected = document.querySelector('input[name="quizOption"]:checked');
+    if(selected){
+        a++
+    }else{
+        alert("Please select any of them");
+    }
+}
+function disable(){
+    for(let i=0; i<quizForm.length; i++){
+                quizForm[i].disabled = true;
+            }
+}
+function check(){
+        let selected = document.querySelector('input[name="quizOption"]:checked').value;
+        if(selected === questions[a].ans){
+            correctcount++;
+            selected.disabled = "true";
+            disable();
+        }else{
+            wrongcount++;
+            disable();
+        }
+}
+function st(){
+    let form = document.getElementById("quizForm");
+    form.onchange = EventTarget => check();
 }
 function dis(){
     let qu = ""
-    let box = document.getElementById("box");
-    
-        qu += `<div class="question-box">
+       if(a === questions.length){
+        score();
+       }else{
+         qu += `<div class="question-box">
                     <div class="questions">
-                        <p>${questions[a].question}</p><p id="cou">${a+1}</p>
+                        <p>${questions[a].question}</p><div style="font-size: 1.2rem;"><p>Question:${a+1}</p><p>Score:${correctcount}</p></div>
                     </div>
                     <div class="options">
                         <form id="quizForm">
                             
-                            <input type="radio" id="a" name="quizOption" value="A">
+                            <input type="radio" id="a" name="quizOption" value="A" required>
                             <label for="a">${questions[a].A}</label><br>
                             
                             <input type="radio" id="b" name="quizOption" value="B">
@@ -79,23 +97,31 @@ function dis(){
                             <label for="d">${questions[a].D}</label>
                         </form>
                     </div>
-                   
+                   <div class="btn"> 
+                         
+                    <button type="button" onclick="index();dis();" id="see">Submit</button>
+                </div>
                 </div>`
         
-        document.getElementById("box1").innerHTML = qu;
+        document.getElementById("box").innerHTML = qu;
+        st();
+       }
         
-}
-dis();
+}   
 
-let see = document.getElementById("see");
-see.addEventListener("click",dis);
-
-function check(){
-    let selected = document.querySelector('input[name="quizOption"]:checked');
-   
-        if(selected === questions[a].ans){
-            console.log("done");
-        }else{
-            console.log("issue");
-        }
+function score(){
+    console.log(a)
+    if(a === 5){
+         document.getElementById("box").innerHTML =
+         `<div class="question-box">
+                    <h1 style="text-align: center;">Score Card</h1>
+                    <div class="scores">
+                        <div class="data">
+                            <h2>Score: ${correctcount}</h2><br>
+                            <h4>Wrong Answer: ${wrongcount}</h4>
+                            <button style="background-color: white; font-size: 1.2rem;" onclick="location.reload();">Start Again</button>
+                        </div>
+                    </div>
+                </div>`
+    }
 }

@@ -19,12 +19,13 @@
     background-color: aquamarine;
     width: 100%;
     max-width: 800px;
-    height: 720px;
+    height: 600px;
     margin-top: 150px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    border-radius: 30px;
 }
 
 .question-box{
@@ -32,6 +33,7 @@
     height: 500px;
     background-color: white;
     padding: 20px;
+    border-radius: 50px;
 }
 .questions{
     font-size: 2rem;
@@ -72,4 +74,31 @@
     background-color: green;
     font-size: 1.2rem;
     color: white;
+}
+
+.scores{
+    width: 100%;
+    max-width: 700px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.data{
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    background-color: beige;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.data h2,h4,button{
+    width: 100%;
+    border-radius: 20px;
+    border: none;
 }
