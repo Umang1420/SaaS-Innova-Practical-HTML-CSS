@@ -20,7 +20,7 @@ async function load() {
     }
   });
 }
-``
+
 let userbtn = document.getElementById("user");
 let postbtn = document.getElementById("post");
 userbtn.addEventListener("click", user);
