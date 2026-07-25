@@ -1,0 +1,218 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    background:#f2f2f2;
+    color:#333;
+}
+
+
+header{
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+}
+
+header h1{
+    margin-bottom:10px;
+    font-size:35px;
+}
+
+header p{
+    font-size:18px;
+}
+
+
+
+nav{
+    background:#34495e;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+}
+
+nav ul li{
+    position:relative;
+}
+
+nav ul li a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:15px 20px;
+    transition:.3s;
+}
+
+nav ul li:hover>a{
+    background:#3498db;
+}
+
+.menu{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#4a6278;
+    min-width:180px;
+    list-style:none;
+}
+
+.menu li{
+    width:100%;
+}
+
+.menu li a{
+    padding:12px 15px;
+    border-bottom:1px solid rgba(255,255,255,.2);
+}
+
+.dropdown:hover .menu{
+    display:block;
+}
+
+
+.hero{
+    background: brown;
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.hero h2{
+    font-size:34px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.7;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 25px;
+    background:white;
+    color: brown;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#ecf0f1;
+}
+
+
+.section{
+    width:90%;
+    max-width:1000px;
+    margin:40px auto 20px;
+    text-align:center;
+}
+
+.section h2{
+    margin-bottom:10px;
+    color:#2c3e50;
+}
+
+.section p{
+    margin-top:15px;
+    line-height:1.7;
+}
+
+
+.card{
+    width:90%;
+    max-width:900px;
+    background:white;
+    margin:20px auto;
+    padding:25px;
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:  brown;
+    margin-bottom:12px;
+}
+
+.card p{
+    line-height:1.7;
+}
+
+
+#contact p{
+    margin:10px 0;
+}
+
+
+footer{
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:18px;
+    margin-top:auto;
+}
+
+
+@media(max-width:768px){
+
+nav ul{
+    flex-direction:column;
+}
+
+nav ul li{
+    width:100%;
+}
+
+nav ul li a{
+    text-align:center;
+}
+
+.menu{
+    position:static;
+    width:100%;
+}
+
+.hero{
+    padding:50px 15px;
+}
+
+.hero h2{
+    font-size:28px;
+}
+
+header h1{
+    font-size:28px;
+}
+
+.card{
+    width:95%;
+}
+
+}
