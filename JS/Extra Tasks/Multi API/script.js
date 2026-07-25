@@ -2,23 +2,26 @@ let users = [];
 let quotes = [];
 let posts = [];
 async function load() {
-  let response = await fetch("https://jsonplaceholder.typicode.com/users");
-  let response1 = await fetch("https://dummyjson.com/quotes");
-  let response2 = await fetch("https://dummyjson.com/posts");
-  const data = await response1.json();
-  const data1 = await response2.json();
-  users = await response.json();
-  quotes = data.quotes || [];
-  posts = data1.posts || [];
-  let promises = new Promise((resolve, reject) => {
-    if (response || response1 || response2) {
-      resolve(console.log(users));
-      resolve(console.log(posts));
-      resolve(console.log(quates));
-    } else {
-      reject(console.log("issue"));
-    }
-  });
+  let [response, response1, response2] = await Promise.all([
+    fetch("https://jsonplaceholder.typicode.com/users"),
+    fetch("https://dummyjson.com/quotes"),
+    fetch("https://dummyjson.com/posts")
+  ]);
+
+  let [userData, quoteData, postData] = await Promise.all([
+    response.json(),
+    response1.json(),
+    response2.json()
+  ]);
+
+  users = userData;
+  quotes = quoteData.quotes || [];
+  posts = postData.posts || [];
+
+  console.log(users);
+  console.log(posts);
+  console.log(quotes);
+  showSummary();
 }
 
 let userbtn = document.getElementById("user");
@@ -27,6 +30,7 @@ userbtn.addEventListener("click", user);
 postbtn.addEventListener("click", post);
 userbtn.addEventListener("click", toggle1);
 postbtn.addEventListener("click", toggle2);
+
 function quote() {
   let a = Math.floor(Math.random() * 30);
   document.getElementById("qu").innerHTML =
@@ -78,6 +82,14 @@ const Previous = () => {
   }
   post();
 };
+
+function showSummary() {
+  document.getElementById("summary").innerHTML = `
+    <p>Total Users: ${users.length}</p>
+    <p>Total Posts: ${posts.length}</p>
+    <p>Total Quotes: ${quotes.length}</p>
+  `;
+}
 
 function toggle1() {
   if (userbtn.value == "OFF") {
