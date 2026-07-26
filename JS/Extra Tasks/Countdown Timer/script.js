@@ -2,26 +2,76 @@ let start = document.getElementById("st");
 let restart = document.getElementById("rt");
 let ut = document.getElementById("in");
 let tt = document.getElementById("timetype");
-start.addEventListener("click",calc)
+
+let myinterval;
+
+start.addEventListener("click", calc);
 
 function calc(){
-    utime = Number(ut.value.trim());
+
+    clearInterval(myinterval);
+
+    let utime = Number(ut.value.trim());
+
     let m = utime * 60;
     let h = utime * 60 * 60;
-    if(tt.value=="sec"){
-        console.log("hello");
-        myinterval=setInterval(function () {
-            var a = utime--;
-            document.getElementById("ti").innerHTML = a}, 1000);
-            setTimeout(console.log("hello"),utime);
-    }else if(tt.value=="min"){
-        setInterval(function () {
-            let b = m--;
-            document.getElementById("ti").innerHTML = b}, 1000);
-    }else{   
-        setInterval(function () {
-            let e = h--;
-            document.getElementById("ti").innerHTML = e}, 1000);
-    }
-}
 
+    if(tt.value=="sec"){
+
+        myinterval = setInterval(function(){
+
+            document.getElementById("ti").innerHTML = utime;
+
+            utime--;
+
+            if(utime<0){
+
+                clearInterval(myinterval);
+
+                document.getElementById("ti").innerHTML = "Time Over";
+
+            }
+
+        },1000);
+
+    }
+    else if(tt.value=="min"){
+
+        myinterval = setInterval(function(){
+
+            document.getElementById("ti").innerHTML = m;
+
+            m--;
+
+            if(m<0){
+
+                clearInterval(myinterval);
+
+                document.getElementById("ti").innerHTML = "Time Over";
+
+            }
+
+        },1000);
+
+    }
+    else{
+
+        myinterval = setInterval(function(){
+
+            document.getElementById("ti").innerHTML = h;
+
+            h--;
+
+            if(h<0){
+
+                clearInterval(myinterval);
+
+                document.getElementById("ti").innerHTML = "Time Over";
+
+            }
+
+        },1000);
+
+    }
+
+}
