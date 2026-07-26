@@ -26,12 +26,12 @@ function ans(){
                                                         <button onclick="location.reload()">Play Again ⟳</button>`
     }else{
         if(ui < num){
-            document.getElementById("h").innerHTML = "Hint: Too Low";
-            console.log("Too Low");
+            document.getElementById("h").innerHTML = "Hint: Go Higher";
+            console.log("Your number is Low");
             count++;
         }else if(ui > num){
-             document.getElementById("h").innerHTML = "Hint: Too High";
-            console.log("Too high");
+             document.getElementById("h").innerHTML = "Hint: Go Lower";
+            console.log("Your number is Too high");
             count++;
         }
     }
