@@ -1,0 +1,84 @@
+.container {
+  width: 600px;
+  margin: 20px auto;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: black;
+}
+
+h3 {
+  color: black;
+  margin-top: 20px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+#analyzeBtn {
+  display: block;
+  margin-top: 10px;
+  background-color: lightblue;
+  color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 8px 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.stats {
+  margin-top: 20px;
+}
+
+.stat-box {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 10px;
+  text-align: center;
+  width: 140px;
+}
+
+.stat-box p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.stat-box h2 {
+  margin: 5px 0 0 0;
+}
+
+#commonWords {
+  margin-bottom: 20px;
+}
+
+#commonWords li {
+  margin-bottom: 3px;
+}
+
+#frequencyTable {
+  border: 1px solid black;
+}
+
+.freq-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-bottom: 1px solid gray;
+}
+
+.freq-row span:last-child {
+  font-weight: bold;
+}
