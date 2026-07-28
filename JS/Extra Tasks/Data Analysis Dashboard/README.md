@@ -5,7 +5,9 @@ A product dashboard that loads sample product data from an online API and displa
 ## How it works
 - Shows total, average, minimum, and maximum product prices.
 - Lets you filter products by category.
-- Displays a bar chart of product prices.
+- Displays a bar/line/pie chart of product prices.
+- Error Handling / Loading State
+- Search & Sort Controls
 
 ## How to run
 - Open the folder with Live Server or any local web server.
