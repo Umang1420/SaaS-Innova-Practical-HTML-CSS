@@ -31,6 +31,9 @@ function calc(){
                 document.getElementById("ti").innerHTML = "Time Over";
 
             }
+            if(utime<10){
+                document.getElementById("ti").style.color = "red";
+            }
 
         },1000);
 
@@ -50,6 +53,9 @@ function calc(){
                 document.getElementById("ti").innerHTML = "Time Over";
 
             }
+            if(m<10){
+                document.getElementById("ti").style.color = "red";
+            }
 
         },1000);
 
@@ -68,6 +74,9 @@ function calc(){
 
                 document.getElementById("ti").innerHTML = "Time Over";
 
+            }
+            if(h<10){
+                document.getElementById("ti").style.color = "red";
             }
 
         },1000);
