@@ -84,7 +84,7 @@ function inpt(){
 
     else{
 
-        error("nv","Error: Enter Valid Name");
+        error("nv","Error: Enter Valid Name (min 3 Characters)");
 
     }
 
