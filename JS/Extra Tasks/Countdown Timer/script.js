@@ -11,77 +11,85 @@ function calc(){
 
     clearInterval(myinterval);
 
-    let utime = Number(ut.value.trim());
+    let inputValue = ut.value.trim();
+
+    let utime = Number(inputValue);
 
     let m = utime * 60;
     let h = utime * 60 * 60;
-    if(utime !== ""){if(tt.value=="sec"){
 
-        myinterval = setInterval(function(){
+    if(inputValue !== "" && !isNaN(inputValue) && utime > 0){
+        
+        document.getElementById("ti").style.color = "";
 
-            document.getElementById("ti").innerHTML = utime;
+        if(tt.value=="sec"){
 
-            utime--;
+            myinterval = setInterval(function(){
 
-            if(utime<0){
+                document.getElementById("ti").innerHTML = utime;
 
-                clearInterval(myinterval);
+                utime--;
 
-                document.getElementById("ti").innerHTML = "Time Over";
+                if(utime<0){
 
-            }
-            if(utime<10){
-                document.getElementById("ti").style.color = "red";
-            }
+                    clearInterval(myinterval);
 
-        },1000);
+                    document.getElementById("ti").innerHTML = "Time Over";
 
+                }
+                if(utime<10){
+                    document.getElementById("ti").style.color = "red";
+                }
+
+            },1000);
+
+        }
+        else if(tt.value=="min"){
+
+            myinterval = setInterval(function(){
+
+                document.getElementById("ti").innerHTML = m;
+
+                m--;
+
+                if(m<0){
+
+                    clearInterval(myinterval);
+
+                    document.getElementById("ti").innerHTML = "Time Over";
+
+                }
+                if(m<10){
+                    document.getElementById("ti").style.color = "red";
+                }
+
+            },1000);
+
+        }
+        else{
+
+            myinterval = setInterval(function(){
+
+                document.getElementById("ti").innerHTML = h;
+
+                h--;
+
+                if(h<0){
+
+                    clearInterval(myinterval);
+
+                    document.getElementById("ti").innerHTML = "Time Over";
+
+                }
+                if(h<10){
+                    document.getElementById("ti").style.color = "red";
+                }
+
+            },1000);
+
+        }
+
+    }else{
+        alert("Enter The time");
     }
-    else if(tt.value=="min"){
-
-        myinterval = setInterval(function(){
-
-            document.getElementById("ti").innerHTML = m;
-
-            m--;
-
-            if(m<0){
-
-                clearInterval(myinterval);
-
-                document.getElementById("ti").innerHTML = "Time Over";
-
-            }
-            if(m<10){
-                document.getElementById("ti").style.color = "red";
-            }
-
-        },1000);
-
-    }
-    else{
-
-        myinterval = setInterval(function(){
-
-            document.getElementById("ti").innerHTML = h;
-
-            h--;
-
-            if(h<0){
-
-                clearInterval(myinterval);
-
-                document.getElementById("ti").innerHTML = "Time Over";
-
-            }
-            if(h<10){
-                document.getElementById("ti").style.color = "red";
-            }
-
-        },1000);
-
-    }
-
-}else{
-    alert(  "Enter THe time")
-}}
+}
