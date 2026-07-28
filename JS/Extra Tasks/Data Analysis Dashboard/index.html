@@ -44,12 +44,17 @@
 
         <div id="controls">
 
-            <label>Filter By Category</label>
-
+            <label for="category">Filter By Category</label>
             <select id="category">
-
                 <option>Loading...</option>
+            </select>
 
+            <!-- Added Chart Type Dropdown -->
+            <label for="chartType">Chart Type</label>
+            <select id="chartType">
+                <option value="bar">Bar Chart</option>
+                <option value="line">Line Chart</option>
+                <option value="pie">Pie Chart</option>
             </select>
 
             <button id="reset">Show All Products</button>
