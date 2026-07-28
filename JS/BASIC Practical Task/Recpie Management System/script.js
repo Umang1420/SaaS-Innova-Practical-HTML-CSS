@@ -25,30 +25,61 @@ function addf(){
         alert('fill the details')
     }
 }
-function show(){
 
+function show(){
     let tableRows = "";
 
     for(let i = 0; i < recipeList.length; i++){
-        tableRows = tableRows + "<tr><td>" + recipeList[i].name + "</td><td>" + recipeList[i].ingredients + "</td><td>" + recipeList[i].time + "</td><td>"+ recipeList[i].catagory + "</td><td>"+"<button onclick='deleteRecipe(" + i + ")'>Delete</button> " +
-            "<button onclick='editRecipe(" + i + ")'>Edit</button>" +
-            "</td></tr>";;
+        tableRows += `<tr id="row-${i}">
+            <td>${recipeList[i].name}</td>
+            <td>${recipeList[i].ingredients}</td>
+            <td>${recipeList[i].time}</td>
+            <td>${recipeList[i].catagory}</td>
+            <td>
+                <button onclick="deleteRecipe(${i})">Delete</button>
+                <button onclick="editRecipe(${i})">Edit</button>
+            </td>
+        </tr>`;
     }
 
     document.getElementById("recipeRows").innerHTML = tableRows;
 }
-function editRecipe(i){
-    let newName = prompt("Edit recipe name:", recipeList[i].name);
-    let newIngredients = prompt("Edit ingredients:", recipeList[i].ingredients);
-    let newTime = prompt("Edit time:", recipeList[i].time);
-    let newcatagory = prompt("Edit time:",recipeList[i].catagory);
 
-    if(newName && newIngredients && newTime && newcatagory){
-        recipeList[i] = {name: newName, ingredients: newIngredients, time: newTime, catagory: newcatagory};
+function editRecipe(i){
+    let row = document.getElementById(`row-${i}`);
+    
+    row.innerHTML = `
+        <td><input type="text" id="edit-name-${i}" value="${recipeList[i].name}"></td>
+        <td><input type="text" id="edit-ing-${i}" value="${recipeList[i].ingredients}"></td>
+        <td><input type="text" id="edit-time-${i}" value="${recipeList[i].time}"></td>
+        <td><input type="text" id="edit-cat-${i}" value="${recipeList[i].catagory}"></td>
+        <td>
+            <button onclick="saveRecipe(${i})">Save</button>
+            <button onclick="show()">Cancel</button>
+        </td>
+    `;
+}
+
+function saveRecipe(i){
+    let newName = document.getElementById(`edit-name-${i}`).value.trim();
+    let newIngredients = document.getElementById(`edit-ing-${i}`).value.trim();
+    let newTime = document.getElementById(`edit-time-${i}`).value.trim();
+    let newCatagory = document.getElementById(`edit-cat-${i}`).value.trim();
+
+    if(newName && newIngredients && newTime && newCatagory){
+        recipeList[i] = {
+            name: newName, 
+            ingredients: newIngredients, 
+            time: newTime, 
+            catagory: newCatagory
+        };
         localStorage.setItem("recipes", JSON.stringify(recipeList));
-        show();
+        show(); 
+    } else {
+        alert("Please fill all details before saving.");
     }
 }
+
 async function searchRecipes(){
     let searchTerm = await document.getElementById("searchBox").value.trim().toLowerCase();
 
@@ -71,18 +102,15 @@ async function searchRecipes(){
         alert("Provide the Ingreidents To search recipe");
     } 
 }
+
 function deleteRecipe(i){
     recipeList.splice(i, 1);
     localStorage.setItem("recipes", JSON.stringify(recipeList));
     show();
 }
-    
-
 
 function showe(shown, hidden) {
   document.getElementById(shown).style.display='block';
   document.getElementById(hidden).style.display='none';
   return false;
 }
-
-
