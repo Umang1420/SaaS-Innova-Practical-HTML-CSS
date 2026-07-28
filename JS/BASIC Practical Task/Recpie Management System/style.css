@@ -47,6 +47,7 @@
             width: 500px;
             border: 2px solid black; 
             text-align: center;
+            border-collapse: collapse;
         }
         .dis {
             width: 100%;
