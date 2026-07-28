@@ -5,49 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player</title>
     <link rel="stylesheet" href="style.css">
-     <script
-      src="https://kit.fontawesome.com/60b76f61c8.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/60b76f61c8.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
         <div class="content">
             <div id="box">
-               <div class="play-card">
-                 <div class="hedding">
-                    <h1>Music Player</h1>
-                    <p>Enjoy Music</p>
-                </div>
-                <div id="player">
-                    <div id="img" class="img">
-                    <p>Select The Song as your choice</p>
+                <div class="play-card">
+                    <div class="hedding">
+                        <h1>Music Player</h1>
+                        <p id="status-text">Enjoy Music</p>
                     </div>
-                    <div class="play-btns">
-                        <div id="audio"></div>
-                    </div>
-                </div>
-                </div>
-                <div class="playlist-card">
-                    <div class="playlist">
-                    <div id="hedder">
-                        <h2>Playlist</h2>
-                    </div>
-                    <div id="list">
-                        <div id="input">
-                            <button id="create">Create Your Own Playlist</button>
+                    <div id="player">
+                        <div id="img" class="img">
+                            <p>Select The Song as your choice</p>
                         </div>
                         
+                        <!-- Audio element for playback -->
+                        <audio id="audioElement"></audio>
+
+                        <div class="play-btns">
+                            <button id="prevBtn" title="Previous Song"><i class="fa-solid fa-backward-step"></i></button>
+                            <button id="playBtn" title="Play"><i class="fa-solid fa-play"></i></button>
+                            <button id="pauseBtn" title="Pause"><i class="fa-solid fa-pause"></i></button>
+                            <button id="stopBtn" title="Stop"><i class="fa-solid fa-square"></i></button>
+                            <button id="nextBtn" title="Next Song"><i class="fa-solid fa-forward-step"></i></button>
+                            <button id="shuffleBtn" title="Toggle Shuffle"><i class="fa-solid fa-shuffle"></i></button>
+                        </div>
                     </div>
                 </div>
+
+                <div class="playlist-card">
+                    <div class="playlist">
+                        <div id="hedder">
+                            <h2>Playlist</h2>
+                        </div>
+                        <div id="list">
+                            <div id="input">
+                                <button id="create">Create Your Own Playlist</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div> 
+
             <div class="songs">
-                    <h3>Songs</h3>
-                    <ol class="songlist" id="songlist"></ol>
-                </div>
+                <h3>Songs</h3>
+                <ol class="songlist" id="songlist"></ol>
+            </div>
         </div>
     </div>
+    <script src="script.js" defer></script>
 </body>
-<script src="script.js" defer></script>
 </html>
