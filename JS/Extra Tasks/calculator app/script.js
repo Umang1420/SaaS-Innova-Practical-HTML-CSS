@@ -14,41 +14,41 @@ clr.addEventListener("click",cl);
 function adde(){
     let first = Number(fnum.value.trim());
     let secound = Number(snum.value.trim());
-    if(first !== String()|NaN && secound !== String()|NaN){
+    if(first && secound !== ""){
         let result = first + secound ;
         document.getElementById("result").innerHTML = result;
     }else{
-        document.getElementById("result").innerHTML = "Enter Numbers Only";
+        document.getElementById("result").innerHTML = "Enter Numbers";
     }
 }
 function sube(){
     let first = Number(fnum.value.trim());
     let secound = Number(snum.value.trim());
-   if(first !== String()|NaN && secound !== String()|NaN){
+   if(first && secound !== ""){
         let result = first - secound ;
         document.getElementById("result").innerHTML = result;
     }else{
-        document.getElementById("result").innerHTML = "Enter Numbers Only";
+        document.getElementById("result").innerHTML = "Enter Number";
     }
 }
 function mule(){
     let first = Number(fnum.value.trim());
     let secound = Number(snum.value.trim());
-    if(first !== String()|NaN && secound !== String()|NaN){
+    if(first && secound !== ""){
         let result = first * secound ;
         document.getElementById("result").innerHTML = result;
     }else{
-        document.getElementById("result").innerHTML = "Enter Numbers Only";
+        document.getElementById("result").innerHTML = "Enter Numbers";
     }
 }
 function dive(){
     let first = Number(fnum.value.trim());
     let secound = Number(snum.value.trim());
-   if(first !== String()|NaN && secound !== String()|NaN){
+   if(first && secound !== ""){
         let result = first / secound ;
         document.getElementById("result").innerHTML = result;
     }else{
-        document.getElementById("result").innerHTML = "Enter Numbers Only";
+        document.getElementById("result").innerHTML = "Enter Numbers";
     }
 }
 
