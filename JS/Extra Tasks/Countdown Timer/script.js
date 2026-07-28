@@ -15,8 +15,7 @@ function calc(){
 
     let m = utime * 60;
     let h = utime * 60 * 60;
-
-    if(tt.value=="sec"){
+    if(utime !== ""){if(tt.value=="sec"){
 
         myinterval = setInterval(function(){
 
@@ -83,4 +82,6 @@ function calc(){
 
     }
 
-}
+}else{
+    alert(  "Enter THe time")
+}}
