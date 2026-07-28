@@ -18,14 +18,24 @@ async function load() {
 }
 
 function renderQuote() {
+    if (quotes.length === 0) return;
+
 
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
     if (quoteText) {
-        quoteText.textContent = `"${randomQuote.quote}" - ${randomQuote.author}`;
+        
+        quoteText.textContent = `[${randomQuote.id}] "${randomQuote.quote}" - ${randomQuote.author}`;
     }
 }
 
-newQuoteBtn.addEventListener("click", load);
+
+newQuoteBtn.addEventListener("click", function() {
+    if (quotes.length > 0) {
+        renderQuote();
+    } else {
+        load();
+    }
+});
 
 load();
