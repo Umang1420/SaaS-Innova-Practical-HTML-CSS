@@ -26,8 +26,6 @@ function renderQuote() {
     }
 }
 
-if (newQuoteBtn) {
-    newQuoteBtn.addEventListener("click", load);
-}
+newQuoteBtn.addEventListener("click", load);
 
 load();
