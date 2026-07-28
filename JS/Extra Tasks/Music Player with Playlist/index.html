@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player</title>
     <link rel="stylesheet" href="style.css">
+     <script
+      src="https://kit.fontawesome.com/60b76f61c8.js"
+      crossorigin="anonymous"
+    ></script>
 </head>
 <body>
     <div class="container">
@@ -29,8 +33,13 @@
                 </div>
                 <div class="playlist-card">
                     <div class="playlist">
-                    <h2>Playlist</h2>
+                    <div id="hedder">
+                        <h2>Playlist</h2>
+                    </div>
                     <div id="list">
+                        <div id="input">
+                            <button id="create">Create Your Own Playlist</button>
+                        </div>
                         
                     </div>
                 </div>
@@ -38,7 +47,7 @@
             </div> 
             <div class="songs">
                     <h3>Songs</h3>
-                    <ol id="songlist"></ol>
+                    <ol class="songlist" id="songlist"></ol>
                 </div>
         </div>
     </div>
