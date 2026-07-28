@@ -30,8 +30,13 @@ function add(){
     let task = inputtask.value.trim();
     let desc = inputdesc.value.trim();
     
+    if(task !== "" && desc !== ""){
+      
     TODOSList.push({task:task,description:desc,completed:false});
     localStorage.setItem("TODOS",JSON.stringify(TODOSList));
+    }else{
+      alert("Enter Task Deatails");
+    }
     
     inputtask.value = "";
     inputdesc.value = "";
