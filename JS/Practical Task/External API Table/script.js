@@ -12,7 +12,7 @@ function renderTable(list) {
         rows += `<tr>
             <td>${list[i].name}</td>
             <td>${list[i].email}</td>
-            <td>${list[i].phone}</td>
+            <td>${list[i].address.suite},${list[i].address.street},${list[i].address.city}</td>
             <td>${list[i].id}</td>
         </tr>`;
     }
