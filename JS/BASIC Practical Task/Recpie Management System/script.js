@@ -1,35 +1,51 @@
 let savedData = localStorage.getItem("recipes");
 let recipeList = savedData ? JSON.parse(savedData) : [];
 
-function addf(){
-    let addre=document.getElementById("addre");
-    let addin= document.getElementById("addin");
+async function getRecipesFromStorage() {
+    return new Promise((resolve) => {
+        let data = localStorage.getItem("recipes");
+        resolve(data ? JSON.parse(data) : []);
+    });
+}
+
+async function saveRecipesToStorage(data) {
+    return new Promise((resolve) => {
+        localStorage.setItem("recipes", JSON.stringify(data));
+        resolve(true);
+    });
+}
+
+async function addf() {
+    let addre = document.getElementById("addre");
+    let addin = document.getElementById("addin");
     let addti = document.getElementById("addti");
-    let addca = document.getElementById("addca")
-    let result= addre.value.trim();
+    let addca = document.getElementById("addca");
+
+    let result = addre.value.trim();
     let result1 = addin.value.trim();
     let result2 = addti.value.trim();
     let result3 = addca.value.trim();
-    
-    if(result && result1 && result2 && result3 !== ""){
-        
-        recipeList.push({name:result,ingredients:result1,time:result2,catagory:result3});
-        
-        localStorage.setItem("recipes", JSON.stringify(recipeList));
 
-        addre.value="";
-        addin.value="";
-        addti.value="";
-        addca.value="";
-    }else{
-        alert('fill the details')
+    if (result && result1 && result2 && result3 !== "") {
+        recipeList.push({ name: result, ingredients: result1, time: result2, catagory: result3 });
+
+        await saveRecipesToStorage(recipeList);
+
+        addre.value = "";
+        addin.value = "";
+        addti.value = "";
+        addca.value = "";
+
+        show();
+    } else {
+        alert('fill the details');
     }
 }
 
-function show(){
+function show() {
     let tableRows = "";
 
-    for(let i = 0; i < recipeList.length; i++){
+    for (let i = 0; i < recipeList.length; i++) {
         tableRows += `<tr id="row-${i}">
             <td>${recipeList[i].name}</td>
             <td>${recipeList[i].ingredients}</td>
@@ -45,9 +61,9 @@ function show(){
     document.getElementById("recipeRows").innerHTML = tableRows;
 }
 
-function editRecipe(i){
+function editRecipe(i) {
     let row = document.getElementById(`row-${i}`);
-    
+
     row.innerHTML = `
         <td><input type="text" id="edit-name-${i}" value="${recipeList[i].name}"></td>
         <td><input type="text" id="edit-ing-${i}" value="${recipeList[i].ingredients}"></td>
@@ -60,57 +76,70 @@ function editRecipe(i){
     `;
 }
 
-function saveRecipe(i){
+async function saveRecipe(i) {
     let newName = document.getElementById(`edit-name-${i}`).value.trim();
     let newIngredients = document.getElementById(`edit-ing-${i}`).value.trim();
     let newTime = document.getElementById(`edit-time-${i}`).value.trim();
     let newCatagory = document.getElementById(`edit-cat-${i}`).value.trim();
 
-    if(newName && newIngredients && newTime && newCatagory){
+    if (newName && newIngredients && newTime && newCatagory) {
         recipeList[i] = {
-            name: newName, 
-            ingredients: newIngredients, 
-            time: newTime, 
+            name: newName,
+            ingredients: newIngredients,
+            time: newTime,
             catagory: newCatagory
         };
-        localStorage.setItem("recipes", JSON.stringify(recipeList));
-        show(); 
+
+        await saveRecipesToStorage(recipeList);
+        show();
     } else {
         alert("Please fill all details before saving.");
     }
 }
 
-async function searchRecipes(){
-    let searchTerm = await document.getElementById("searchBox").value.trim().toLowerCase();
+async function searchRecipes() {
+    let searchBox = document.getElementById("searchBox");
+    let searchTerm = searchBox.value.trim().toLowerCase();
 
-    try{
-    if(searchTerm !==""){
-        let filteredList = recipeList.filter(function(recipe){
-        return recipe.ingredients.toLowerCase().includes(searchTerm);
-    });
+    try {
+        if (searchTerm !== "") {
+            let filteredList = recipeList.filter(function (recipe) {
+                return recipe.ingredients.toLowerCase().includes(searchTerm);
+            });
 
-    let tableRows = "";
+            let tableRows = "";
 
-    for(let i = 0; i < filteredList.length; i++){
-        tableRows = tableRows + "<tr><td>" + filteredList[i].name + "</td><td>" + filteredList[i].ingredients + "</td><td>" + filteredList[i].time + "</td><td>" + filteredList[i].catagory + "</td><td>"+"<button onclick='deleteRecipe(" + i + ")'>Delete</button> " +
-            "<button onclick='editRecipe(" + i + ")'>Edit</button>"+"</td></tr>";
+            for (let i = 0; i < filteredList.length; i++) {
+                tableRows += `<tr>
+                    <td>${filteredList[i].name}</td>
+                    <td>${filteredList[i].ingredients}</td>
+                    <td>${filteredList[i].time}</td>
+                    <td>${filteredList[i].catagory}</td>
+                    <td>
+                        <button onclick='deleteRecipe(${i})'>Delete</button>
+                        <button onclick='editRecipe(${i})'>Edit</button>
+                    </td>
+                </tr>`;
+            }
+
+            document.getElementById("recipeRows").innerHTML = tableRows;
+            searchBox.value = "";
+        } else {
+            show();
+        }
+    } catch (error) {
+        alert("Provide the Ingredients to search recipe");
     }
-
-    document.getElementById("recipeRows").innerHTML = tableRows; 
-    searchBox.value= "";
-    }}catch{
-        alert("Provide the Ingreidents To search recipe");
-    } 
 }
 
-function deleteRecipe(i){
+async function deleteRecipe(i) {
     recipeList.splice(i, 1);
-    localStorage.setItem("recipes", JSON.stringify(recipeList));
+    await saveRecipesToStorage(recipeList);
     show();
 }
 
 function showe(shown, hidden) {
-  document.getElementById(shown).style.display='block';
-  document.getElementById(hidden).style.display='none';
-  return false;
+    document.getElementById(shown).style.display = 'block';
+    document.getElementById(hidden).style.display = 'none';
+    return false;
 }
