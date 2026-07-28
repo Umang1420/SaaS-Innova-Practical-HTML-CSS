@@ -23,7 +23,6 @@ function display() {
 }
 
 function filter() {
-    
     let buttonText = event.target.innerText.toLowerCase();
     if (buttonText === "completed") {
         currentFilter = "completed";
@@ -33,7 +32,7 @@ function filter() {
     renderList();
 }
 
-
+// Exactly aapka original HTML markup
 function renderList() {
     let list = "";
     
@@ -50,7 +49,7 @@ function renderList() {
                         <input onclick='check(${i}, this)' ${taskList[i].Completed ? 'checked' : ''} type="checkbox">
                     </div>
                     <div>
-                        <button type='button' onclick='edit(${i})'>Edit</button>
+                        <button type='button' onclick='edit(${i}, this)'>Edit</button>
                         <button type='button' onclick='del(${i})'>Delete</button>
                     </div>
                 </div>`;
@@ -64,15 +63,35 @@ function check(index, checkbox) {
     renderList(); 
 }
 
-function edit(index) {
+// Edit function - includes same classes (task-title, task-desc) for inputs
+function edit(index, btn) {
+    let itemDiv = btn.closest('#task-item');
     let currentTask = taskList[index];
-    let newTitle = prompt("Edit Task Title:", currentTask.task);
-    let newDesc = prompt("Edit Task Description:", currentTask.taskDescription);
-    
-    if (newTitle !== null && newDesc !== null) {
-        taskList[index].task = newTitle.trim() || currentTask.task;
-        taskList[index].taskDescription = newDesc.trim() || currentTask.taskDescription;
+
+    itemDiv.innerHTML = `
+        <div><input type="text" class="task-title" id="edit-task-${index}" value="${currentTask.task}"></div>
+        <div><input type="text" class="task-desc" id="edit-desc-${index}" value="${currentTask.taskDescription}"></div>
+        <div>
+            <label>Completed</label>
+            <input type="checkbox" disabled ${currentTask.Completed ? 'checked' : ''}>
+        </div>
+        <div>
+            <button type='button' onclick="saveEdit(${index})">Save</button>
+            <button type='button' onclick="renderList()">Cancel</button>
+        </div>
+    `;
+}
+
+function saveEdit(index) {
+    let newTitle = document.getElementById(`edit-task-${index}`).value.trim();
+    let newDesc = document.getElementById(`edit-desc-${index}`).value.trim();
+
+    if (newTitle !== "" && newDesc !== "") {
+        taskList[index].task = newTitle;
+        taskList[index].taskDescription = newDesc;
         renderList();
+    } else {
+        alert("Fields cannot be empty!");
     }
 }
 
