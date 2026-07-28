@@ -12,16 +12,18 @@
             <div class="box">
                 <div class="opration">
                     <h1>Calculator</h1><br>
+                    <form onsubmit="event.preventDefault();">
                     <div class="input">
-                        <input type="text" id="in1" placeholder=" Enter First Number">
-                        <input type="text" id="in2" placeholder=" Enter Secound Number">
+                        <input type="text" id="in1" placeholder=" Enter First Number" required>
+                        <input type="text" id="in2" placeholder=" Enter Secound Number" required>
                     </div><br>
                     <div class="buttons">
                         <button id="add">ADDITION(+)</button>
                         <button id="sub">SUBTRACTION(-)</button>
                         <button id="mul">MULTIPLICATION(*)</button>
                         <button id="di">DIVISION(/)</button>
-                    </div><br>
+                    </div>
+                    </form><br>
                     <div class="result">
                         <h2>Result:</h2><br>
                         <div id="resultbox">
