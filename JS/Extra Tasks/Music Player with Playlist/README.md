@@ -7,6 +7,8 @@ A simple music player that plays songs from a built-in list and lets users build
 - The player shows the song image and audio controls.
 - You can create a playlist by entering song names.
 - You can view your playlist and add songs to it.
+- Delete Song from Playlist
+- Shuffle & Next/Previous Controls
 
 ## How to run
 - Open index.html in a browser or use Live Server.
