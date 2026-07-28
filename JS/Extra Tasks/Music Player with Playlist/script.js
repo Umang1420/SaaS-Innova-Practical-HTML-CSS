@@ -82,21 +82,32 @@ function showplaylist(){
      }else{
          for(let i=0; i<Playlist.length; i++){
          snames  += `
-                           <li id=${i}>${Playlist[i].songname}</li> 
+                           <li id=${i}>${Playlist[i].songname} <i class="fa-solid fa-trash-can"></i></li> 
+                           
                         `
       }
      }
       document.getElementById("playlistsongs").innerHTML = snames;
       document.getElementById("playlistsongs").addEventListener("click", function(event) {
     
-    if (event.target && event.target.nodeName === "LI") {
-  
-         index = Playlist[index].id;
-         event.target.style.border = "1px solid yellow";
-    }
+        if (event.target && event.target.nodeName === "LI") {
     
-    showplaylistsong()
-});
+            index = Playlist[index].id;
+            event.target.style.border = "1px solid yellow";
+        }
+        showplaylistsong()
+    });
+    document.getElementById("playlistsongs").addEventListener("click", function(event) {
+    
+        if (event.target && event.target.nodeName === "I") {
+    
+            index = Playlist[index].id;
+            function del(){
+                Playlist.pop(playlist[index])
+            }
+        }
+        showplaylistsong()
+    });
 }
 
 document.getElementById("songlist").addEventListener("click", function(event) {
@@ -111,25 +122,6 @@ document.getElementById("songlist").addEventListener("click", function(event) {
 });
 
 
-                    
-
-
-let next = document.getElementById("next").addEventListener("click",function() {
-    index++;
-    console.log(index)
-    show();
-     if(index == songs.length-1){
-        index = -1;
-    }
-});
-let pre = document.getElementById("pre").addEventListener("click",function() {
-    index--;
-    
-    show();
-    console.log(index)
-});
-
-
 function addsongs(){
     document.getElementById("input").innerHTML = `
                             <div>
@@ -138,6 +130,7 @@ function addsongs(){
                                 <button class="add" onclick="showplaylist();" id="done">Show playlist</button>
                             </div>`
 }
+
 function add(){
    let  userinput = document.getElementById("userinput");
    let result = userinput.value.trim();
