@@ -12,6 +12,8 @@ function add() {
         inputtask.value = "";
         inputds.value = "";
         renderList();
+    }else{
+        alert("Fill The Details");
     }
 }
 
