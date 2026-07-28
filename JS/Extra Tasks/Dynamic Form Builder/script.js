@@ -1,7 +1,7 @@
 let create = document.getElementById("create");
 create.addEventListener("click", form);
 
-function form() {
+function form(event) {
   event.preventDefault();
 
   let inputfiled = prompt("Enter total fileds");
@@ -14,7 +14,7 @@ function form() {
   let fileds = parseInt(inputfiled);
 
   let hedding = document.getElementById("text");
-  hedding.innerText = "Dynamic Ragistration Form";
+  hedding.innerText = "Dynamic Registration Form";
 
   let displayfiled = document.getElementById("fileds");
   displayfiled.innerHTML = "";
@@ -29,6 +29,8 @@ function form() {
       location.reload();
       return;
     }
+
+    type = type.trim().toLowerCase();
 
     if (type == "radio" || type == "checkbox") {
       let groupname = prompt(`Enter ${type} name`);
@@ -81,8 +83,21 @@ function form() {
       continue;
     }
 
+    // Modern Edit: text, email, password aur baki inputs ke liye custom label prompt
+    let customLabel = "";
+    if (type === "text" || type === "password" || type === "email") {
+      customLabel = prompt(`Enter label name for ${type} field`);
+      
+      if (customLabel === null || customLabel.trim() === "") {
+        location.reload();
+        return;
+      }
+    } else {
+      customLabel = `${type} Field`;
+    }
+
     let label = document.createElement("label");
-    label.textContent = `${type} Field`;
+    label.textContent = customLabel;
 
     let newfiled = document.createElement("input");
     newfiled.type = type;
